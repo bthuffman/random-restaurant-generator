@@ -1,0 +1,181 @@
+.game-area {
+  box-sizing: border-box;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  width: 100%;;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.card {
+  box-sizing: border-box;
+  border-radius: 10px;
+  height:70%;
+  margin-left: auto;
+  position: absolute;
+  left: 7%;
+  width: 25%;
+
+}
+
+.card1{
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 35%;
+  width: 25%;
+}
+
+.card2{
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 63%;
+  width: 25%;
+}
+
+.container {
+  padding: 6px;
+}
+
+/*
+The lever
+*/
+/*
+ * Base CSS
+ */
+
+ body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  margin: 25px auto;
+  border-radius: 3px;
+}
+
+@media (orientation: landscape) {
+  .container {
+      width: 80vw;
+  }
+  .slot {
+      width: 20vw;
+      height: 20vw;
+  }
+  .slot-handle {
+      top: 50%;
+      left: 92%;
+  }
+}
+
+@media (orientation: portrait) {
+  .container {
+      width: 80vw;
+  }
+  .slot {
+      width: 20vw;
+      height: 20vw;
+  }
+  .slot-handle {
+      top: 50%;
+      left: 95%;
+  }
+}
+
+
+/*
+* Slot Machine
+*/
+
+.sm-main {
+  position: relative;
+  padding-top: 40px;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-top: -10% !important;
+}
+
+.slot-handle {
+  position: absolute;
+  height: 25px;
+  width: 30px;
+  background-color: transparent;
+}
+
+.slot-gear {
+  position: absolute;
+  height: 50px;
+  width: 29px;
+  background-color: rgb(51, 53, 54);
+  border: 3px solid rgb(41, 43, 44);
+  top: -28px;
+  left: -5px;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.slot-knob {
+  position: absolute;
+  background-color: rgb(51, 53, 54);
+  border: 5px solid rgb(41, 43, 44);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  top: -45px;
+  left: -15px;
+  transition: top .5s ease-out;
+  padding-top: 13px;
+  color: LightGray;
+}
+
+.slot-knob:hover {
+  cursor: pointer;
+  top: -20px;
+}
+
+.slot-knob:active {
+  position: absolute;
+  background-color: rgb(51, 53, 54);
+  border: 5px solid rgb(41, 43, 44);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  top: -45px;
+  left: -15px;
+  transition: top 1s ease-out;
+  padding-top: 13px;
+  color: LightGray;
+}
+
+.slot {
+  background-color: #ffffff;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position-y: 0px;
+  display: inline-block;
+  border-radius: 10px;
+  border: 3px solid rgb(96, 80, 195);
+}
+
+/*
+* Animations
+*/
+
+@keyframes animated {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 0 1000%;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="game-area" >
+    <div #target></div>
+    <!-- <div class="empty-item">A</div> -->
+    <div class="card" *ngFor="let card of cards" [@cardSpinner]="card.state" [style.background]="card.color">
+      <p style="font-size: text-align: center; margin-top: 23px;">{{card.value}}</p>
+    </div>
+
+
+    <div class="card1" *ngFor="let card1 of card1s" [@cardSpinner]="card1.state" [style.background]="card1.color">
+      <p style="font-size: text-align: center; margin-top: 23px;">{{card1.value}}</p>
+    </div>
+
+    <div class="card2" *ngFor="let card2 of card2s" [@cardSpinner]="card2.state" [style.background]="card2.color">
+      <p style="font-size: text-align: center; margin-top: 23px;">{{card2.value}}</p>
+    </div>
+    <!-- <div class="empty-item">A</div> -->
+  </div>
+  <div class="container">
+    <div class="sm-main" fxLayout="row" fxLayoutAlign="center center">
+
+      <div class="slot-handle">
+        <div class="slot-gear">
+          <!-- Slot Machine: Optional CTA -->
+          <div class="slot-knob" (click)="toggle()" (click)="scroll(target)" #randomButton [@openClose]="isOpen ? 'open' : 'closed'"><a href="#results"></a></div>
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,19 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.agm-map-container-inner,
+.sebm-google-map-container-inner {
+    border: 5px solid rgb(0, 110, 209);
+    border-radius: 25px;
+    width: 100% !important;
+    height: 100% !important;
+}

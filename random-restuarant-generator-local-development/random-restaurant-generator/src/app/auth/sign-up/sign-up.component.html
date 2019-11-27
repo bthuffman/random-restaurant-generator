@@ -1,0 +1,27 @@
+<div class='jumbotron bg-transparent text-center'>
+    <!-- Need to Log In -->
+    <div *ngIf='!user' class='card text-center'>
+        <h6 class='card-header'>Sign Up Free Today!</h6>
+        <div class='card-block'>
+            <h4 class='card-title'>Not signed up</h4>
+            <p class='card-text'>Sign in with:</p>
+        </div>
+        <div class='card-block'>
+            <button class='btn btn-social-icon btn-google' (click)='signInWithGoogle()'><span class='fa fa-google'></span></button>
+        </div>
+    </div>
+    <!-- Already Logged In -->
+    <div *ngIf='user' class='card text-center'>
+        <h6 class='card-header'>Logged In</h6>
+        <div class='card-block'></div>
+        <img class='card-img-top img-responsive photo' src='{{ user.photoUrl }}'>
+        <div class='card-block'>
+            <h4 class='card-title'>{{ user.name }}</h4>
+            <p class='card-text'>{{ user.email }}</p>
+        </div>
+        <!-- Log Out -->
+        <div class='card-block'>
+            <button class='btn btn-danger' (click)='signOut()'>Sign Out</button>
+        </div>
+    </div>
+</div>

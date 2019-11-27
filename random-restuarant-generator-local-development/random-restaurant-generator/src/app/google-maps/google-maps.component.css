@@ -1,0 +1,135 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+
+agm-map {
+    height: 50vh;
+    width: 87%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+/* Optional: Makes the sample page fill the window. */
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 6px;
+}
+
+.container {
+    padding: 6px;
+}
+
+.copyAddressButton {
+    margin-bottom: 16px;
+}
+
+.form-control {
+    padding: 6px;
+    width: 50%;
+}
+
+.form-group {
+    padding: 6px;
+    margin-top: 10px;
+}
+
+img {
+    border-radius: 25px;
+    width: 99%;
+    justify-content: center;
+}
+
+.jumbotron {
+    margin-top: 22px;
+    width: 100%;
+    border-radius: 25px;
+}
+
+label {
+    padding: 6px;
+    margin-bottom: 0;
+}
+
+@media (orientation: landscape) {
+
+  .horizontalLine {
+    display: none;
+  }
+  mat-accordion {
+    width: 80%;
+    margin-bottom: 24px;
+  }
+  mat-expansion-panel
+  {
+    /* margin-left: 5px; */
+    border-radius: 4px;
+    width: 100%;
+    background-color:  #007bff;
+  }
+  mat-expansion-panel-header
+   {
+    /* margin-left: 5px; */
+    border-radius: 4px;
+    width: 80%;
+    background-color:  #007bff;
+    padding-right: 0;
+    padding-left: 24 !important;
+  }
+}
+
+@media (orientation: portrait) {
+  mat-accordion {
+    width: 80%;
+    margin-bottom: 24px;
+  }
+  mat-expansion-panel
+{
+  /* margin-left: 5px; */
+  border-radius: 4px;
+  width: 100%;
+  background-color:  #007bff;
+}
+mat-expansion-panel-header
+ {
+  /* margin-left: 5px; */
+  border-radius: 4px;
+  width: 80%;
+  background-color:  #007bff;
+  padding-right: 0;
+  padding-left: 24 !important;
+}
+}
+
+@media only screen and (max-width: 320px) {
+.noMarginLeft  {
+  margin-left: 0 !important;
+}
+}
+
+@media only screen and (max-width: 320px) {
+.copyAddressButton {
+  font-size: .9rem;
+}
+}
+
+p {
+    padding: 0;
+}
+
+
+/* Styles for the new randomizer */
+
+.newRandomizer {
+    border-radius: 25px;
+    border: 5px solid rgb(0, 110, 209);
+    padding: 2vh;
+    background: rgb(2, 117, 216);
+    height: 100%;
+}
+
+.randomButton {
+    opacity: 0;
+}

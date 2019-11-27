@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <!-- Hamburger menu. Set to hide when screens are greater than extra small.-->
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+         <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div><a routerLink="/">Restaurant Randomizer</a></div>
+      <!-- Takes up the space between LOGO and the links so that the links are pushed all the way to the right of the page. An alternative to this is to make a flex-element, turn it into a container and then move it to the end. I.e. fxFlex fxLayout fxLayoutAlign="flex-end"-->
+      <div fxFlex></div>
+        <!-- Hide the links on small screens -->
+        <div fxHide.xs>
+          <!--  Prevents the ul from showing vertically, adds space between links, and creates a class for styling-->
+          <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+            <!-- <li>
+              <a routerLink="/">Home</a>
+            </li> -->
+            <li>
+              <a *ngIf='!user' routerLink="/sign-up">Sign-Up</a>
+            </li>
+            <li>
+              <a *ngIf='!user' routerLink="/login">Login</a>
+            </li>
+            <li>
+              <a *ngIf='user' routerLink="/history">History</a>
+            </li>
+            <li>
+              <a *ngIf='user' routerLink="/favorites">Favorites</a>
+            </li>
+            <li>
+                <button *ngIf='user' (click)='signOut()' class='btn btn-danger'>Logout</button>
+            </li>
+          </ul>
+        </div>
+    </mat-toolbar>

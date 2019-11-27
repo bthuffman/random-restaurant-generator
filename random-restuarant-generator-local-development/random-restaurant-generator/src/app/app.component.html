@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-sidenav-container>
+  <!-- Location of the sidenav bar. -->
+  <mat-sidenav #sidenav role="navigation" >
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+
+    <main>
+       <!--Router outlet is an Angular directive which marks the place in your document that you want to render a route (loaded component). By placing it here in the mat-sidenav component we insure that the navigation bar will appear on every page of the website-->
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

@@ -1,0 +1,74 @@
+<app-permission-pop-up></app-permission-pop-up>
+<div class="container" id='map'>
+  <div class="form-group" fxLayout="row" fxLayoutAlign="start center" id='searchBar'>
+    <label>Enter address</label>
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+      placeholder="Search for a restaurant" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </div>
+  <div class="newRandomizer">
+    <agm-map fxLayout="row" fxLayoutAlign="center center" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom"
+      class="map">
+      <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+        (dragEnd)="markerDragEnd($event)"></agm-marker>
+    </agm-map>
+    <p class='randomButton' #randomButton></p>
+    <app-slots-animation></app-slots-animation>
+    <app-results-page></app-results-page>
+  </div>
+  <!-- News jumbotron -->
+  <div class="jumbotron text-center hoverable p-4">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 offset-md-1 mx-3 my-3 noMarginLeft">
+
+        <!-- Side Details -->
+        <div fxLayout="column" fxLayoutAlign="center center" class="noMarginLeft">
+          <img src="{{photo}}" alt="Image of restaurant">
+            <p>Today's Hours: {{openTime}} {{weekday}}<br /></p>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false" >
+                  <mat-expansion-panel-header >
+                    <mat-panel-title >
+                      Weekly Hours
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p >{{weekdays}}</p>
+                </mat-expansion-panel>
+              </mat-accordion>
+              <p>{{address}}</p>
+                  <button class="btn btn-primary text-white copyAddressButton" (click)="passAddress()" (click)="goToGoogleSite()" value="click to copy" >Copy Address and Get Directions</button>
+        </div>
+        <hr class="horizontalLine"/>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-7 text-md-left mx-3 mt-3">
+
+        <!-- Excerpt -->
+        <a href="#!">
+          <h6 class="h6 pb-1"><fa-icon [icon]="faStar"></fa-icon>{{ratings}} </h6>
+        </a>
+        <h4 class="h4 mb-4">{{name}}</h4>
+        <p>Website: <a href="{{website}}" target='_blank'>{{name}}</a><br /></p>
+        <p>Today's Hours: {{openTime}} {{weekday}}<br /></p>
+        <p class="font-weight-bold">Reviews:</p>
+        <p>{{reviewText}}<br /></p>
+        <p>Rating: {{reviewAspectRating}}<br /></p>
+        <p class="font-weight-normal">by <a><strong> {{reviewAuthor}}</strong></a></p>
+        <a class="btn btn-primary text-white" href="{{reviewAuthorUrl}}" target='_blank'>Read More Reviews</a>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- News jumbotron -->
+</div>
